@@ -2,6 +2,9 @@ package br.com.rodrigosasaki.structures.iterator;
 
 import java.util.Iterator;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 public class ArrayIterator<E> implements Iterator<E>{
 
 	private E[] elements;

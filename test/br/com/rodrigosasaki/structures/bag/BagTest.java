@@ -5,6 +5,9 @@ import org.junit.Test;
 
 import static org.junit.Assert.*;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 public class BagTest{
 	
 	private Bag<Integer> bag;

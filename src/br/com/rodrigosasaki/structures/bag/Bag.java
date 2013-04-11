@@ -5,14 +5,21 @@ import java.util.Iterator;
 
 import br.com.rodrigosasaki.structures.iterator.ArrayIterator;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 public class Bag<E> implements Iterable<E>{
 	
 	private E[] elements;
 	private int index;
 	
-	@SuppressWarnings("unchecked")
 	public Bag(){
-		elements = (E[]) new Object[10];
+		this(10);
+	}
+	
+	@SuppressWarnings("unchecked")
+	public Bag(int size){
+		elements = (E[]) new Object[size];
 		index = 0;
 	}
 	
