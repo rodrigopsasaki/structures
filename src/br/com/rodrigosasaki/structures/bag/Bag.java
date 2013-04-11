@@ -37,6 +37,10 @@ public class Bag<E> implements Iterable<E>{
 	public int size(){
 		return index;
 	}
+	
+	public boolean isEmpty(){
+		return index == 0;
+	}
 
 	@Override
 	public Iterator<E> iterator(){

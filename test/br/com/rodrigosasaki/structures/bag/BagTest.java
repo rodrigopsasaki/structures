@@ -30,4 +30,10 @@ public class BagTest{
 		}
 		assertEquals(11, bag.size());
 	}
+	
+	@Test
+	public void shouldReturnCorrectlyWhenEmpty(){
+		assertEquals(true, bag.isEmpty());
+		assertEquals(0, bag.size());
+	}
 }
