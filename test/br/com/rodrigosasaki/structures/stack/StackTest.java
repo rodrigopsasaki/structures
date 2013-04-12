@@ -3,6 +3,7 @@ package br.com.rodrigosasaki.structures.stack;
 import static org.junit.Assert.assertEquals;
 
 import java.lang.reflect.Field;
+import java.util.Iterator;
 
 import org.junit.Test;
 
@@ -78,9 +79,28 @@ public class StackTest{
 	}
 	
 	@Test
-	public void test(){
+	public void shouldReturnEmptyIteratorWhenEmpty(){
 		Stack<Integer> stack = new Stack<Integer>();
-		stack.iterator();
+		Iterator<Integer> ite = stack.iterator();
+		assertEquals(false, ite.hasNext());
+	}
+	
+	@Test
+	public void shouldReturnTrueForIsEmptyWhenEmptied(){
+		Stack<Integer> stack = new Stack<Integer>();
+		
+		for (Integer i = 0; i < 5; i++){
+			stack.push(i);
+		}
+		
+		assertEquals(5, stack.size());
+
+		for (Integer i = 0; i < 5; i++){
+			stack.pop();
+		}
+		
+		assertEquals(0, stack.size());
+		assertEquals(true, stack.isEmpty());
 	}
 
 }

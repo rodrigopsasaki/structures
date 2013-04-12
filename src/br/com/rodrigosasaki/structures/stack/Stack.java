@@ -11,10 +11,10 @@ import br.com.rodrigosasaki.structures.iterator.ArrayIterator;
 public class Stack<E> implements Iterable<E>{
 
 	private static final int INITIAL_CAPACITY = 10;
-	
+
 	private E[] elements;
 	private int index;
-	
+
 	public Stack(){
 		this(INITIAL_CAPACITY);
 	}
@@ -61,7 +61,7 @@ public class Stack<E> implements Iterable<E>{
 
 	@Override
 	public Iterator<E> iterator(){
-		return new ArrayIterator<E>(Arrays.copyOf(elements, index == 0 ? 0 : index - 1));
+		return new ArrayIterator<E>(Arrays.copyOf(elements, Math.max(0, index - 1)));
 	}
 
 }
