@@ -2,6 +2,8 @@ package br.com.rodrigosasaki.structures.list;
 
 /**
  * @author Rodrigo Sasaki
+ * 
+ * TODO: Finish implementation :)
  */
 public class LinkedList<E> {
 	
