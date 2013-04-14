@@ -1,8 +1,10 @@
-package br.com.rodrigosasaki.sorting.selectionsort;
+package br.com.rodrigosasaki.structures.sorting.selectionsort;
 
 import static org.junit.Assert.assertEquals;
 
 import org.junit.Test;
+
+import br.com.rodrigosasaki.structures.sorting.selectionsort.SelectionSort;
 
 /**
  * @author Rodrigo Sasaki
