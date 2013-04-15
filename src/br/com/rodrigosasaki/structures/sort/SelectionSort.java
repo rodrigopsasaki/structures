@@ -1,4 +1,6 @@
-package br.com.rodrigosasaki.structures.sorting.selectionsort;
+package br.com.rodrigosasaki.structures.sort;
+
+import static br.com.rodrigosasaki.strucutres.util.StructuresUtil.*;
 
 /**
  * @author Rodrigo Sasaki
@@ -9,18 +11,12 @@ public class SelectionSort{
 		for(int i = 0 ; i < elements.length ; i++){
 			int smallest = i;
 			for(int j = i + 1 ; j < elements.length ; j++){
-				if(elements[j].compareTo(elements[j - 1]) < 0){
+				if(elements[j].compareTo(elements[smallest]) < 0){
 					smallest = j;
 				}
 			}
 			swap(elements, i, smallest);
 		}
-	}
-	
-	public static <T extends Comparable<T>> void swap(T[] elements, int one, int other){
-		T t = elements[one];
-		elements[one] = elements[other];
-		elements[other] = t;
 	}
 	
 }
