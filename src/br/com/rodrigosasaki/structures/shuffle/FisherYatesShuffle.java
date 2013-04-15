@@ -1,6 +1,6 @@
 package br.com.rodrigosasaki.structures.shuffle;
 
-import static br.com.rodrigosasaki.strucutres.util.StructuresUtil.swap;
+import static br.com.rodrigosasaki.structures.util.StructuresUtil.swap;
 
 import java.util.Random;
 
