@@ -2,7 +2,7 @@ package br.com.rodrigosasaki.structures.util;
 
 import org.junit.Test;
 
-import br.com.rodrigosasaki.strucutres.util.StructuresUtil;
+import br.com.rodrigosasaki.structures.util.StructuresUtil;
 import static org.junit.Assert.*;
 
 public class StructuresUtilTest{
