@@ -1,9 +1,12 @@
 package br.com.rodrigosasaki.structures.shuffle;
 
-import static br.com.rodrigosasaki.structures.util.StructuresUtil.swap;
+import static br.com.rodrigosasaki.structures.util.ArrayUtil.swap;
 
 import java.util.Random;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 public class FisherYatesShuffle{
 
 	public static void shuffle(byte[] array){

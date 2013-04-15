@@ -6,6 +6,9 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.rodrigosasaki.structures.shuffle.FisherYatesShuffleTest;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 @RunWith(Suite.class)
 @SuiteClasses({ FisherYatesShuffleTest.class })
 public class ShufflingTestSuite{

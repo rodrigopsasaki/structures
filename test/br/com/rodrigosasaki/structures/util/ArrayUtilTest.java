@@ -2,10 +2,13 @@ package br.com.rodrigosasaki.structures.util;
 
 import org.junit.Test;
 
-import br.com.rodrigosasaki.structures.util.StructuresUtil;
+import br.com.rodrigosasaki.structures.util.ArrayUtil;
 import static org.junit.Assert.*;
 
-public class StructuresUtilTest{
+/**
+ * @author Rodrigo Sasaki
+ */
+public class ArrayUtilTest{
 
 	@Test
 	public void shouldSwapItemsCorrectly(){
@@ -21,9 +24,20 @@ public class StructuresUtilTest{
 		int oldNum1 = numbers[num1];
 		int oldNum2 = numbers[num2];
 
-		StructuresUtil.swap(numbers, num1, num2);
+		ArrayUtil.swap(numbers, num1, num2);
 		
 		assertEquals(oldNum1, numbers[num2]);
 		assertEquals(oldNum2, numbers[num1]);
+	}
+	
+	@Test
+	public void shouldMoveBackwardsCorrectly(){
+		int[] numbers = new int[10];
+		
+		numbers[4] = 4;
+		
+		ArrayUtil.moveBackwards(numbers, 4, 2);
+		
+		assertEquals(4, numbers[2]);
 	}
 }

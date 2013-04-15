@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.Iterator;
 
 import br.com.rodrigosasaki.structures.iterator.ArrayIterator;
-import br.com.rodrigosasaki.structures.util.ArraysUtil;
+import br.com.rodrigosasaki.structures.util.ArrayUtil;
 
 /**
  * @author Rodrigo Sasaki
@@ -38,7 +38,7 @@ public class List<E> implements Iterable<E>{
 	public E remove(int i){
 		index--;
 		E removedElement = elements[i];
-		ArraysUtil.moveBackwards(elements, i + 1, 1);
+		ArrayUtil.moveBackwards(elements, i + 1, 1);
 		controlLength();
 		return removedElement;
 	}

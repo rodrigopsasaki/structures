@@ -6,6 +6,9 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.rodrigosasaki.structures.iterator.ArrayIteratorTest;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 @RunWith(Suite.class)
 @SuiteClasses({ ArrayIteratorTest.class })
 public class IteratorsTestSuite{

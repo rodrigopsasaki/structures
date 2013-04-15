@@ -7,6 +7,9 @@ import org.junit.runners.Suite.SuiteClasses;
 import br.com.rodrigosasaki.structures.bag.BagTest;
 import br.com.rodrigosasaki.structures.stack.StackTest;
 
+/**
+ * @author Rodrigo Sasaki
+ */
 @RunWith(Suite.class)
 @SuiteClasses({ BagTest.class, StackTest.class })
 public class StructuresTestSuite{

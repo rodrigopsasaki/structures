@@ -1,6 +1,6 @@
 package br.com.rodrigosasaki.structures.sort;
 
-import static br.com.rodrigosasaki.structures.util.StructuresUtil.*;
+import static br.com.rodrigosasaki.structures.util.ArrayUtil.*;
 
 /**
  * @author Rodrigo Sasaki
