@@ -9,13 +9,13 @@ import org.junit.runners.Suite.SuiteClasses;
  */
 @RunWith(Suite.class)
 @SuiteClasses(
-	{
-		IteratorsTestSuite.class,
-		ShufflingTestSuite.class,
-		SortingTestSuite.class,
-		StructuresTestSuite.class,
-		UtilTestSuite.class 
-	})
+{
+	IteratorsTestSuite.class,
+	ShufflingTestSuite.class,
+	SortingTestSuite.class,
+	StructuresTestSuite.class,
+	UtilTestSuite.class 
+})
 public class AllTests{
 
 }
