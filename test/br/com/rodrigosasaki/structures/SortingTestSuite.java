@@ -6,6 +6,7 @@ import org.junit.runners.Suite.SuiteClasses;
 
 import br.com.rodrigosasaki.structures.sort.InsertionSortTest;
 import br.com.rodrigosasaki.structures.sort.SelectionSortTest;
+import br.com.rodrigosasaki.structures.sort.ShellSortTest;
 
 /**
  * @author Rodrigo Sasaki
@@ -14,7 +15,8 @@ import br.com.rodrigosasaki.structures.sort.SelectionSortTest;
 @SuiteClasses(
 { 
 	SelectionSortTest.class,
-	InsertionSortTest.class
+	InsertionSortTest.class,
+	ShellSortTest.class
 })
 public class SortingTestSuite{
 
