@@ -6,15 +6,14 @@ package br.com.rodrigosasaki.structures.sort;
 public class ShellSort{
 	
 	public static <T extends Comparable<T>> void sort(T[] elements){
-		int h = findH(elements);
+		int h = findH(elements.length);
 		while(h > 0){
 			InsertionSort.hsort(elements, h);
 			h = knuthDecrement(h);
 		}
 	}
 	
-	private static <T> int findH(T[] elements){
-		int length = elements.length;
+	private static int findH(int length){
 		int h = 1;
 		
 		while(h < length){
