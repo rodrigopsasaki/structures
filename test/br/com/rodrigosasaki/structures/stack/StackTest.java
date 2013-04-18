@@ -39,20 +39,20 @@ public class StackTest{
 			assertEquals(i, stack.pop());
 		}
 	}
-	
+
 	@Test
 	public void internalArrayShouldGrowCorrectly(){
 		try{
 			Stack<Integer> stack = new Stack<Integer>();
 			Field elements = stack.getClass().getDeclaredField("elements");
 			elements.setAccessible(true);
-			
+
 			for (Integer i = 1; i <= 15; i++){
 				stack.push(i);
 				Object[] internalArray = (Object[]) elements.get(stack);
-				if(i <= 10){
+				if (i <= 10){
 					assertEquals(10, internalArray.length);
-				}else{
+				} else{
 					assertEquals(20, internalArray.length);
 				}
 			}
@@ -60,7 +60,7 @@ public class StackTest{
 			e.printStackTrace();
 		}
 	}
-	
+
 	@Test
 	public void shouldReturnIteratorThatInteratesInInsertionOrder(){
 		Stack<Integer> stack = new Stack<Integer>();
@@ -72,35 +72,67 @@ public class StackTest{
 		assertEquals(15, stack.size());
 
 		Integer count = 1;
-		
-		for(Integer n : stack){
-			assertEquals(count++ , n);
+
+		for (Integer n : stack){
+			assertEquals(count++, n);
 		}
+		
+		assertEquals(Integer.valueOf(16), count);
 	}
-	
+
 	@Test
 	public void shouldReturnEmptyIteratorWhenEmpty(){
 		Stack<Integer> stack = new Stack<Integer>();
 		Iterator<Integer> ite = stack.iterator();
 		assertEquals(false, ite.hasNext());
 	}
-	
+
 	@Test
 	public void shouldReturnTrueForIsEmptyWhenEmptied(){
 		Stack<Integer> stack = new Stack<Integer>();
-		
+
 		for (Integer i = 0; i < 5; i++){
 			stack.push(i);
 		}
-		
+
 		assertEquals(5, stack.size());
 
 		for (Integer i = 0; i < 5; i++){
 			stack.pop();
 		}
-		
+
 		assertEquals(0, stack.size());
 		assertEquals(true, stack.isEmpty());
+	}
+
+	@Test
+	public void shouldPopCorrectValueAndDecreaseSize(){
+		Stack<Integer> stack = new Stack<Integer>();
+
+		stack.push(1);
+		stack.push(2);
+
+		assertEquals(2, stack.size());
+
+		Integer result = stack.pop();
+
+		assertEquals(Integer.valueOf(2), result);
+		assertEquals(1, stack.size());
+	}
+
+	@Test
+	public void shouldPeekCorrectValueAndMaintainSize(){
+		Stack<Integer> stack = new Stack<Integer>();
+
+		stack.push(1);
+		stack.push(2);
+
+		assertEquals(2, stack.size());
+
+		Integer result = stack.peek();
+
+		assertEquals(Integer.valueOf(2), result);
+		assertEquals(2, stack.size());
 	}
 
 }

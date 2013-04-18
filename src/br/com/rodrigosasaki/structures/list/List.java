@@ -10,9 +10,9 @@ import br.com.rodrigosasaki.structures.util.ArrayUtil;
  * @author Rodrigo Sasaki
  */
 public class List<E> implements Iterable<E>{
-	
+
 	private static final int INITIAL_CAPACITY = 10;
-	
+
 	private E[] elements;
 	private int index;
 
@@ -30,11 +30,11 @@ public class List<E> implements Iterable<E>{
 		controlLength();
 		elements[index++] = e;
 	}
-	
+
 	public E get(int i){
 		return elements[i];
 	}
-	
+
 	public E remove(int i){
 		index--;
 		E removedElement = elements[i];
@@ -53,6 +53,10 @@ public class List<E> implements Iterable<E>{
 		}
 	}
 
+	public Object[] toArray(){
+		return Arrays.copyOf(elements, elements.length);
+	}
+
 	public int size(){
 		return index;
 	}
@@ -63,6 +67,19 @@ public class List<E> implements Iterable<E>{
 
 	@Override
 	public Iterator<E> iterator(){
-		return new ArrayIterator<E>(elements);
+		return new ArrayIterator<E>(Arrays.copyOf(elements, index));
+	}
+
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder("[");
+		if (!isEmpty()){
+			for (int i = 0; i < index; i++){
+				sb.append(elements[i] + ", ");
+			}
+			sb.deleteCharAt(sb.lastIndexOf(","));
+		}
+		sb.append("]");
+		return sb.toString();
 	}
 }

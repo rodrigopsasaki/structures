@@ -32,6 +32,13 @@ public class Stack<E> implements Iterable<E>{
 		controlLength();
 		elements[index++] = element;
 	}
+	
+	public E peek(){
+		if (isEmpty()){
+			throw new IllegalStateException("Cannot peek an empty stack");
+		}
+		return elements[index - 1];
+	}
 
 	public E pop(){
 		if (isEmpty()){
@@ -61,7 +68,20 @@ public class Stack<E> implements Iterable<E>{
 
 	@Override
 	public Iterator<E> iterator(){
-		return new ArrayIterator<E>(Arrays.copyOf(elements, Math.max(0, index - 1)));
+		return new ArrayIterator<E>(Arrays.copyOf(elements, index));
+	}
+	
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder("[");
+		if (!isEmpty()){
+			for (int i = 0; i < index; i++){
+				sb.append(elements[i] + ", ");
+			}
+			sb.deleteCharAt(sb.lastIndexOf(","));
+		}
+		sb.append("]");
+		return sb.toString();
 	}
 
 }
