@@ -73,13 +73,14 @@ public class List<E> implements Iterable<E>{
 	@Override
 	public String toString(){
 		StringBuilder sb = new StringBuilder("[");
-		if (!isEmpty()){
-			for (int i = 0; i < index; i++){
-				sb.append(elements[i] + ", ");
-			}
-			sb.deleteCharAt(sb.lastIndexOf(","));
+		Iterator<E> it = iterator();
+		while(it.hasNext()){
+			sb.append(it.next());
+			sb.append(", ");
 		}
+		sb.delete(sb.length()-2, sb.length());
 		sb.append("]");
 		return sb.toString();
 	}
+	
 }

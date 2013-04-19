@@ -14,7 +14,7 @@ public class Queue<E> implements Iterable<E>{
 	private E[] elements;
 	private int head;
 	private int tail;
-	
+
 	public Queue(){
 		this(INITIAL_CAPACITY);
 	}
@@ -36,7 +36,7 @@ public class Queue<E> implements Iterable<E>{
 	}
 
 	public E dequeue(){
-		if(elements.length > INITIAL_CAPACITY && arrayLessThanQuarter()){
+		if (elements.length > INITIAL_CAPACITY && arrayLessThanQuarter()){
 			shrinkArray(elements.length / 2);
 		} else if (headAtArrayEnd()){
 			head = 0;
@@ -48,7 +48,7 @@ public class Queue<E> implements Iterable<E>{
 	}
 
 	private void organizeHeadAndTail(){
-		if(head == tail){
+		if (head == tail){
 			head = 0;
 			tail = 0;
 		}
@@ -61,9 +61,9 @@ public class Queue<E> implements Iterable<E>{
 	@SuppressWarnings("unchecked")
 	private void shrinkArray(int length){
 		E tempArray[] = (E[]) new Object[length];
-		if(head < tail){
+		if (head < tail){
 			System.arraycopy(elements, head, tempArray, 0, size());
-		}else{
+		} else{
 			System.arraycopy(elements, head, tempArray, 0, elements.length - head);
 			System.arraycopy(elements, 0, tempArray, elements.length - head, tail + 1);
 		}
@@ -75,11 +75,11 @@ public class Queue<E> implements Iterable<E>{
 	private boolean arrayFull(){
 		return size() == elements.length;
 	}
-	
+
 	private boolean tailAtArrayEnd(){
 		return tail == elements.length;
 	}
-	
+
 	private boolean headAtArrayEnd(){
 		return head == elements.length;
 	}
@@ -100,6 +100,8 @@ public class Queue<E> implements Iterable<E>{
 			return tail - head;
 		} else if (tail < head){
 			return (elements.length - head) + tail;
+		} else if (head == tail && head != 0){
+			return elements.length;
 		}
 		return size;
 	}
@@ -112,13 +114,26 @@ public class Queue<E> implements Iterable<E>{
 	@SuppressWarnings("unchecked")
 	public Iterator<E> iterator(){
 		E tempArray[] = (E[]) new Object[size()];
-		if(head < tail){
+		if (head < tail){
 			System.arraycopy(elements, head, tempArray, 0, size());
-		}else{
+		} else{
 			System.arraycopy(elements, head, tempArray, 0, elements.length - head);
-			System.arraycopy(elements, 0, tempArray, elements.length - head, tail + 1);
+			System.arraycopy(elements, 0, tempArray, elements.length - head, tail);
 		}
 		return new ArrayIterator<E>(tempArray);
+	}
+	
+	@Override
+	public String toString(){
+		StringBuilder sb = new StringBuilder("[");
+		Iterator<E> it = iterator();
+		while(it.hasNext()){
+			sb.append(it.next());
+			sb.append(", ");
+		}
+		sb.delete(sb.length()-2, sb.length());
+		sb.append("]");
+		return sb.toString();
 	}
 
 }
