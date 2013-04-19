@@ -45,7 +45,9 @@ public class Stack<E> implements Iterable<E>{
 			throw new IllegalStateException("Cannot pop from an empty stack");
 		}
 		controlLength();
-		return elements[--index];
+		E item = elements[index - 1];
+		elements[--index] = null;
+		return item;
 	}
 
 	public int size(){
