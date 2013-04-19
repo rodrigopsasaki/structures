@@ -111,9 +111,13 @@ public class Queue<E> implements Iterable<E>{
 	@Override
 	@SuppressWarnings("unchecked")
 	public Iterator<E> iterator(){
-		E tempArray[] = (E[]) new Object[elements.length];
-		System.arraycopy(elements, head, tempArray, 0, elements.length - head);
-		System.arraycopy(elements, 0, tempArray, elements.length - head, head);
+		E tempArray[] = (E[]) new Object[size()];
+		if(head < tail){
+			System.arraycopy(elements, head, tempArray, 0, size());
+		}else{
+			System.arraycopy(elements, head, tempArray, 0, elements.length - head);
+			System.arraycopy(elements, 0, tempArray, elements.length - head, tail + 1);
+		}
 		return new ArrayIterator<E>(tempArray);
 	}
 
