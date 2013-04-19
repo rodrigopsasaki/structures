@@ -1,6 +1,10 @@
 *.class
 .classpath
+
+# IDE Specific Files #
 .project
+.idea
+*.iml
 
 # Package Files #
 *.jar
