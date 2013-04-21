@@ -2,7 +2,6 @@
 .classpath
 
 # IDE Specific Files #
-.settings
 .project
 .idea
 *.iml
