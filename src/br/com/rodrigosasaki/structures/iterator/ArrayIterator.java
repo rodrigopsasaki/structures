@@ -22,6 +22,9 @@ public class ArrayIterator<E> implements Iterator<E>{
 
 	@Override
 	public E next(){
+		if(!hasNext()){
+			throw new NoSuchElementException("No more elements in the array.");
+		}
 		return elements[index++];
 	}
 
