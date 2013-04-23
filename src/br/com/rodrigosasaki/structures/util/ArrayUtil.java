@@ -47,6 +47,10 @@ public class ArrayUtil{
 		elements[other] = t;
 	}
 	
+	public static <T extends Comparable<T>> boolean less(T a, T b){
+		return a.compareTo(b) < 0;
+	}
+	
 	public static void moveBackwards(int[] elements, int startingIndex, int indexes){
 		for(int i = startingIndex ; i < elements.length ; i ++){
 			elements[i - indexes] = elements[i];

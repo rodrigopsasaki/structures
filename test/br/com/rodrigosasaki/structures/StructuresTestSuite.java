@@ -4,15 +4,21 @@ import org.junit.runner.RunWith;
 import org.junit.runners.Suite;
 import org.junit.runners.Suite.SuiteClasses;
 
-import br.com.rodrigosasaki.structures.bag.BagTest;
-import br.com.rodrigosasaki.structures.queue.QueueTest;
-import br.com.rodrigosasaki.structures.stack.StackTest;
+import br.com.rodrigosasaki.structures.bag.ArrayBagTest;
+import br.com.rodrigosasaki.structures.list.ArrayListTest;
+import br.com.rodrigosasaki.structures.queue.ArrayQueueTest;
+import br.com.rodrigosasaki.structures.stack.ArrayStackTest;
 
 /**
  * @author Rodrigo Sasaki
  */
 @RunWith(Suite.class)
-@SuiteClasses({ BagTest.class, StackTest.class, QueueTest.class })
+@SuiteClasses({ 
+	ArrayBagTest.class, 
+	ArrayStackTest.class, 
+	ArrayQueueTest.class,
+	ArrayListTest.class
+})
 public class StructuresTestSuite{
 
 }

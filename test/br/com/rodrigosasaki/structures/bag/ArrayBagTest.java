@@ -1,20 +1,20 @@
 package br.com.rodrigosasaki.structures.bag;
 
+import static org.junit.Assert.assertEquals;
+
 import org.junit.Before;
 import org.junit.Test;
-
-import static org.junit.Assert.*;
 
 /**
  * @author Rodrigo Sasaki
  */
-public class BagTest{
+public class ArrayBagTest{
 	
 	private Bag<Integer> bag;
 	
 	@Before
 	public void setUp(){
-		bag = new Bag<Integer>();
+		bag = new ArrayBag<Integer>();
 	}
 
 	@Test

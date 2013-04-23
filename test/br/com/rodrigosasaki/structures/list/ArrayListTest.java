@@ -1,24 +1,27 @@
 package br.com.rodrigosasaki.structures.list;
 
+import static org.hamcrest.CoreMatchers.equalTo;
+import static org.hamcrest.CoreMatchers.not;
+import static org.junit.Assert.assertEquals;
+import static org.junit.Assert.assertThat;
+
 import org.junit.Test;
-import static org.junit.Assert.*;
-import static org.hamcrest.CoreMatchers.*;
 
 /**
  * @author Rodrigo Sasaki
  */
-public class ListTest{
+public class ArrayListTest{
 
 	@Test
 	public void shouldCorrectlyAdd1Item(){
-		List<Integer> list = new List<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 		list.add(35);
 		assertEquals(Integer.valueOf(35), list.get(0));
 	}
 
 	@Test
 	public void shouldRemoveCorrectItem(){
-		List<Integer> list = new List<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 
 		for (Integer i = 0; i < 10; i++){
 			list.add(i);
@@ -32,7 +35,7 @@ public class ListTest{
 
 	@Test
 	public void shouldIterateCorrectlyOnForeach(){
-		List<Integer> list = new List<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 
 		for (Integer i = 0; i < 10; i++){
 			list.add(i);
@@ -46,7 +49,7 @@ public class ListTest{
 	
 	@Test
 	public void shouldRemoveAndAdaptSize(){
-		List<Integer> list = new List<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 
 		for (Integer i = 0; i < 10; i++){
 			list.add(i);
@@ -59,7 +62,7 @@ public class ListTest{
 	
 	@Test
 	public void shouldGrowWhenExceededArray(){
-		List<Integer> list = new List<Integer>();
+		List<Integer> list = new ArrayList<Integer>();
 
 		for (Integer i = 0; i < 100; i++){
 			list.add(i);

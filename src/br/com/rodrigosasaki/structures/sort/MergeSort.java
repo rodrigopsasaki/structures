@@ -1,25 +1,47 @@
 package br.com.rodrigosasaki.structures.sort;
 
+import static br.com.rodrigosasaki.structures.util.ArrayUtil.*;
+
 /**
  * @author Rodrigo Sasaki
  */
-public class MergeSort {
+public class MergeSort{
 	
-	@SuppressWarnings("unchecked")
-	public static <E> void sort(Comparable<E>[] elements){
-		int length = elements.length;
-		Comparable<E>[] aux = new Comparable[length];
-		for(int size = 0 ; size < length ; size += size){
-			for(int lo = 0 ; lo < length - size ; size += size + size){
-				merge(elements, lo, lo + size - 1, Math.min(lo + size + size - 1, length - 1));
-			}
+	private static int INSERTION_CUT = 7;
+
+	public static <T extends Comparable<T>> void sort(T[] elements){
+		T[] aux = elements.clone();
+		sort(aux, elements, 0, elements.length - 1);
+	}
+
+	private static <T extends Comparable<T>> void sort(T[] src, T[] dst, int lo, int hi){
+		if (hi <= lo + INSERTION_CUT){
+			InsertionSort.sort(dst, lo, hi + 1);
+			return;
+		}
+
+		int mid = lo + (hi - lo) / 2;
+		sort(dst, src, lo, mid);
+		sort(dst, src, mid + 1, hi);
+		
+		if (!less(src[mid + 1],src[mid])){
+			System.arraycopy(src, lo, dst, lo, hi - lo + 1);
+			return;
+		}
+		
+		merge(src, dst, lo, mid, hi);
+	}
+
+	private static <T extends Comparable<T>> void merge(T[] src, T[] dst, int lo, int mid, int hi){
+		int i = lo, j = mid + 1;
+		for (int k = lo; k <= hi; k++){
+			if      (i > mid) 			   dst[k] = src[j++];
+			else if (j > hi)			   dst[k] = src[i++];
+			else if (less(src[j], src[i])) dst[k] = src[j++];
+			else				           dst[k] = src[i++];
 		}
 	}
 	
-	private static <E> void merge(Comparable<E>[] a, int lo, int mid, int hi){
-		
-	}
-	
-	
+
 
 }

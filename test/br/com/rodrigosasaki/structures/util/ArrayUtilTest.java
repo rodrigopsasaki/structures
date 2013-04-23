@@ -40,4 +40,13 @@ public class ArrayUtilTest{
 		
 		assertEquals(4, numbers[2]);
 	}
+	
+	@Test
+	public void shouldReturnCorrectlyWhenLess(){
+		Integer n1 = 1;
+		Integer n2 = 2;
+		
+		assertEquals(true, ArrayUtil.less(n1, n2));
+		assertEquals(false, ArrayUtil.less(n2, n1));
+	}
 }

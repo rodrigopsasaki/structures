@@ -10,11 +10,11 @@ import org.junit.Test;
 /**
  * @author Rodrigo Sasaki
  */
-public class StackTest{
+public class ArrayStackTest{
 
 	@Test
 	public void shouldPopItemsInCorrectOrder(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		for (Integer i = 1; i <= 5; i++){
 			stack.push(i);
@@ -27,7 +27,7 @@ public class StackTest{
 
 	@Test
 	public void shouldDoubleWhenLimitExceeded(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		for (Integer i = 1; i <= 15; i++){
 			stack.push(i);
@@ -43,7 +43,7 @@ public class StackTest{
 	@Test
 	public void internalArrayShouldGrowCorrectly(){
 		try{
-			Stack<Integer> stack = new Stack<Integer>();
+			Stack<Integer> stack = new ArrayStack<Integer>();
 			Field elements = stack.getClass().getDeclaredField("elements");
 			elements.setAccessible(true);
 
@@ -63,7 +63,7 @@ public class StackTest{
 
 	@Test
 	public void shouldReturnIteratorThatInteratesInInsertionOrder(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		for (Integer i = 1; i <= 15; i++){
 			stack.push(i);
@@ -82,14 +82,14 @@ public class StackTest{
 
 	@Test
 	public void shouldReturnEmptyIteratorWhenEmpty(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 		Iterator<Integer> ite = stack.iterator();
 		assertEquals(false, ite.hasNext());
 	}
 
 	@Test
 	public void shouldReturnTrueForIsEmptyWhenEmptied(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		for (Integer i = 0; i < 5; i++){
 			stack.push(i);
@@ -107,7 +107,7 @@ public class StackTest{
 
 	@Test
 	public void shouldPopCorrectValueAndDecreaseSize(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		stack.push(1);
 		stack.push(2);
@@ -122,7 +122,7 @@ public class StackTest{
 
 	@Test
 	public void shouldPeekCorrectValueAndMaintainSize(){
-		Stack<Integer> stack = new Stack<Integer>();
+		Stack<Integer> stack = new ArrayStack<Integer>();
 
 		stack.push(1);
 		stack.push(2);

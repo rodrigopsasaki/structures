@@ -7,11 +7,11 @@ import org.junit.Test;
 /**
  * @author Rodrigo Sasaki
  */
-public class QueueTest{
+public class ArrayQueueTest{
 
 	@Test
 	public void shouldEnqueue10ItemsAndDequeueInCorrectOrder(){
-		Queue<Integer> q = new Queue<Integer>();
+		Queue<Integer> q = new ArrayQueue<Integer>();
 
 		for (int i = 0; i < 10; i++){
 			q.enqueue(i);
@@ -24,7 +24,7 @@ public class QueueTest{
 
 	@Test
 	public void shouldEnqueue20ItemsAndDequeueInCorrectOrder(){
-		Queue<Integer> q = new Queue<Integer>();
+		Queue<Integer> q = new ArrayQueue<Integer>();
 
 		for (int i = 0; i < 20; i++){
 			q.enqueue(i);
@@ -37,7 +37,7 @@ public class QueueTest{
 
 	@Test
 	public void shouldShowCorrectSizeInDifferentStages(){
-		Queue<Integer> q = new Queue<Integer>();
+		Queue<Integer> q = new ArrayQueue<Integer>();
 
 		assertEquals(0, q.size());
 
@@ -56,7 +56,7 @@ public class QueueTest{
 
 	@Test
 	public void shouldReturnIteratorInRightOrder(){
-		Queue<Integer> q = new Queue<Integer>();
+		Queue<Integer> q = new ArrayQueue<Integer>();
 		for (int i = 5; i < 10; i++){
 			q.enqueue(i);
 		}
