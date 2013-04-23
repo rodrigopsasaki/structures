@@ -4,6 +4,10 @@ import static br.com.rodrigosasaki.structures.util.ArrayUtil.*;
 
 /**
  * @author Rodrigo Sasaki
+ * 
+ * This class was originally written with a simpler version.
+ * 
+ * But I changed it to use the optimized version presented in class
  */
 public class MergeSort{
 	
