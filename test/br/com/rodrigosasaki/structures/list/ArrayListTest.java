@@ -7,6 +7,11 @@ import static org.junit.Assert.assertThat;
 
 import org.junit.Test;
 
+import com.rodrigosasaki.structures.functional.Filter;
+import com.rodrigosasaki.structures.functional.Mapper;
+import com.rodrigosasaki.structures.list.ArrayList;
+import com.rodrigosasaki.structures.list.List;
+
 /**
  * @author Rodrigo Sasaki
  */
@@ -70,6 +75,47 @@ public class ArrayListTest{
 		
 		for (Integer i = 0; i < 100; i++){
 			assertEquals(i, list.get(i));
+		}
+	}
+	
+	@Test
+	public void shouldFilterListCorrectly(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+		
+		for (Integer i = 0; i < 100; i++){
+			list.add(i);
+		}
+		
+		ArrayList<Integer> evenNumbers = list.filter(new Filter<Integer>(){
+			@Override
+			public boolean apply(Integer t){
+				return t % 2 == 0;
+			}
+		});
+		
+		int count = 0;
+		for(Integer i = 0 ; i < 100 ; i += 2){
+			assertEquals(i, evenNumbers.get(count++));
+		}
+	}
+	
+	@Test
+	public void shouldMapListCorrectly(){
+		ArrayList<Integer> list = new ArrayList<Integer>();
+
+		for (Integer i = 0; i < 100; i++){
+			list.add(i);
+		}
+		
+		ArrayList<Integer> newList = list.map(new Mapper<Integer>(){
+			@Override
+			public Integer apply(Integer t){
+				return t * 2;
+			}
+		});
+		
+		for(Integer i = 0 ; i < 100 ; i += 2){
+			assertEquals(Integer.valueOf(i * 2), newList.get(i));
 		}
 	}
 

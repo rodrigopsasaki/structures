@@ -1,6 +1,9 @@
 package br.com.rodrigosasaki.structures.shuffle;
 
 import org.junit.Test;
+
+import com.rodrigosasaki.structures.shuffle.FisherYatesShuffle;
+
 import static org.junit.Assert.*;
 import static org.hamcrest.CoreMatchers.*;
 

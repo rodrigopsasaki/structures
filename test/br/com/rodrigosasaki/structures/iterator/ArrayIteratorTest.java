@@ -3,6 +3,9 @@ package br.com.rodrigosasaki.structures.iterator;
 import java.util.Iterator;
 
 import org.junit.Test;
+
+import com.rodrigosasaki.structures.iterator.ArrayIterator;
+
 import static org.junit.Assert.*;
 
 /**

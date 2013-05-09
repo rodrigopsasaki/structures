@@ -7,6 +7,9 @@ import java.util.Iterator;
 
 import org.junit.Test;
 
+import com.rodrigosasaki.structures.stack.ArrayStack;
+import com.rodrigosasaki.structures.stack.Stack;
+
 /**
  * @author Rodrigo Sasaki
  */

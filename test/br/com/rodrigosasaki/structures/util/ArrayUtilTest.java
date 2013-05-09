@@ -2,7 +2,8 @@ package br.com.rodrigosasaki.structures.util;
 
 import org.junit.Test;
 
-import br.com.rodrigosasaki.structures.util.ArrayUtil;
+import com.rodrigosasaki.structures.util.ArrayUtil;
+
 import static org.junit.Assert.*;
 
 /**

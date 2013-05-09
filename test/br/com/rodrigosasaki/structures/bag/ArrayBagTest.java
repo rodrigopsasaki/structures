@@ -5,6 +5,9 @@ import static org.junit.Assert.assertEquals;
 import org.junit.Before;
 import org.junit.Test;
 
+import com.rodrigosasaki.structures.bag.ArrayBag;
+import com.rodrigosasaki.structures.bag.Bag;
+
 /**
  * @author Rodrigo Sasaki
  */
