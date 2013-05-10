@@ -81,9 +81,9 @@ public class ArrayList<E> implements List<E>, Cloneable{
 
 	public ArrayList<E> filter(Filter<E> filter){
 		ArrayList<E> newList = new ArrayList<E>();
-		for (E e : this){
-			if (filter.apply(e)){
-				newList.add(e);
+		for (int i = 0; i < index; i++){
+			if (filter.apply(elements[i])){
+				newList.add(elements[i]);
 			}
 		}
 		return newList;
@@ -91,15 +91,15 @@ public class ArrayList<E> implements List<E>, Cloneable{
 
 	public ArrayList<E> map(Mapper<E> mapper){
 		ArrayList<E> newList = new ArrayList<E>();
-		for (E e : this){
-			newList.add(mapper.apply(e));
+		for (int i = 0; i < index; i++){
+			newList.add(mapper.apply(elements[i]));
 		}
 		return newList;
 	}
 
 	public void forEach(Function<E> function){
-		for (E e : this){
-			function.apply(e);
+		for (int i = 0; i < index; i++){
+			function.apply(elements[i]);
 		}
 	}
 
